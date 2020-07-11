@@ -1,0 +1,36 @@
+{
+	"name": "Smile Please",
+	"author": "Rupesh Padhye",
+	"version": "1.0.0",
+	"description": "Laughter packets - trending meme every hour!",
+	"icons": {
+		"128": "128.png"
+	},
+	"content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com https://ssl.google-analytics.com; object-src 'self'",
+	"permissions": [
+		"storage",
+		"alarms"
+	],
+	"optional_permissions": [
+		"notifications"
+	],
+	"manifest_version": 2,
+	"background": {
+		"scripts": [
+			"background.js"
+		],
+		"persistent": true
+	},
+	"web_accessible_resources": [
+		"128.png"
+	],
+	"browser_action": {
+		"default_title": "Smile Please",
+		"default_icon": "128.png",
+		"default_popup": "popup.html"
+	},
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": true
+	}
+}

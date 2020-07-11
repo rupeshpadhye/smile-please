@@ -1,0 +1,17 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/helloworld:$SHORT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'gcr.io/$PROJECT_ID/helloworld:$SHORT_SHA', 'gcr.io/$PROJECT_ID/helloworld:latest']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'gcr.io/$PROJECT_ID/helloworld:$SHORT_SHA', 'gcr.io/$PROJECT_ID/helloworld:$BRANCH_NAME']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/helloworld:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/helloworld:latest']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/helloworld:$BRANCH_NAME']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [ 'beta', 'run', 'deploy', '--region', 'asia-east1', '--image', 'gcr.io/$PROJECT_ID/helloworld', '--platform', 'managed', 'smile-please' ]
+images:
+- 'gcr.io/$PROJECT_ID/helloworld'

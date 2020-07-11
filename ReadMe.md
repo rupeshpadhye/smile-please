@@ -8,8 +8,8 @@ Since Most of employees are working from home and missing the laughter at office
 - Laughter Reminders 
 - Share laughter with your friends with whatsApp
 
-- `smile-please-extension` contains the chrome extension 
--  `smile-please-api` contains api 
+- `extension-smile-please` contains the chrome extension 
+-  `api-smile-please` contains api 
 each folder contains further instructions to get started
 
 
