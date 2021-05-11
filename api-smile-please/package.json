@@ -29,7 +29,7 @@
     "@nestjs/schedule": "^0.3.0",
     "cache-manager": "^3.2.0",
     "firebase-admin": "^8.10.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-fetch": "^2.6.0",
     "node-html-parser": "^1.2.14",
     "reflect-metadata": "^0.1.13",
